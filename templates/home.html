@@ -1,0 +1,69 @@
+
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <!-- start: Header -->
+        {% include 'head.html' %}
+    </head>
+    <body>
+        <!-- start: NavBar -->
+        {% include 'navbar2.html' %}
+        <p></p>
+        <!-- start: Page Content -->
+
+        <div class="container-fluid">
+
+        <div class='col-sm-12 col-md-12 col-lg-12'>  
+
+                      <div class="Typeahead Typeahead--twitterUsers">
+                        <input type="text" class="form-control typeahead Shitty" name="q" id="q" placeholder="Ask Data a Question ...">
+                        </div>
+
+        </div>
+
+        <div class='col-sm-12 col-md-612 col-lg-6  col-lg-offset-3'> 
+        <p class='lead text-align-center'>Since you last visited ...</p>  
+        <div class="alert alert-danger" role="alert">
+          <a href="#" class="alert-link"><p><h3>Daily Email Conversion Rate Down 18% </h3></p> Click here to investigate</a>
+        </div>
+        <div class="alert alert-danger" role="alert">
+          <a href="../v%3Dpartialfull-refunds/" class="alert-link"><p><h3>Refunds Up 40% Week-on-Week</h3></p> We know you want answers to your most costly problems, so we alert you whenever your core numbers change so you can drill down the cause asap</a>
+        </div>
+        <div class="alert alert-info" role="alert">
+          <a href="../dtopcust/" class="alert-link"><p><h3>NEW Top Customers Dashboard </h3></p> We're always crafting answers to your questions based on your data. New insights will appear here!</a>
+        </div>
+
+        + More Coming
+        </div>
+
+      </div>
+        
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+
+
+
+
+
+<!-- start: Footer -->
+{% include 'footer.html' %}
+    <script type="text/javascript" src="{% static 'js/jquery.xdomainrequest.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/typeahead.bundle.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/new.js' %}"></script>
+    </body>
+</html>
+

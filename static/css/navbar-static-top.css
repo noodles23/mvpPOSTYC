@@ -1,0 +1,39 @@
+body {
+  min-height: 1000px;
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  padding: 10px;
+}
+
+.navbar-default .navbar-brand {
+  color: #FFF;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #1D2BFF;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: #FFFFFF;
+  background-color: #83E4FF;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
+.navbar-default .navbar-toggle {
+ border-color: transparent !important;
+}
+
+.navbar-toggle:hover {
+	background-color: #FFFFFF !important;
+}
+
+.navbar-toggle {
+	background-color: #0E3D14 !important;
+}

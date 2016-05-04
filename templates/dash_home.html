@@ -1,0 +1,89 @@
+{% extends "dash_base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+    {{ searchresult.chart_name }}
+{% endblock %}
+
+{% block selectedchart %}
+
+{% if queryset %}
+
+                    <div class='col-sm-2 col-md-2 col-lg-2'>
+                    <div class="span3" id="row-selection" style="height: 40px;">
+                        <span class="filter-count">_</span> selected out of <span class="total-count">_</span> Customers
+                        <br></br>
+                        <div class="span2" style="height: 60px;">
+                            <a href='javascript:dc.filterAll();dc.redrawAll();' class="btn btn-default btn-lg  lato">Reset Selection</a>  
+                            <br></br>
+                            <a href="../search={{ searchresult.chart_name }}/demo" class="btn btn-success btn-lg  lato">Use Selection</a>              
+                        </div>
+                        <br>
+                    </br>
+                    </div>
+                    </div>
+
+                    <div class='col-sm-4 col-md-4 col-lg-4'>
+                        <div class="span6 chart-wrapper"  id="{{ searchresult.chart_id }}">
+                            <div class="chart-title bold"> <strong> {{ searchresult.chart_title }} </strong></div>
+                        </div>
+                    </div>
+
+
+                    <div class='col-sm-6 col-md-6 col-lg-6'>
+                        <div class="chart-wrapper">
+                        
+                        <h3> Customer Return Rate % (Sector Average)</h3>
+                        <p><h4> <strong>52%</strong>  (8% <i style="color:green;"> ABOVE AVG </i>) Overall returned</h4></p>
+                        <p><h4> <strong>62%</strong>  (12% <i style="color:green;"> ABOVE AVG</i>) of Cash-Refund returned</h4></p>
+                        <p><h4> <strong>0%</strong>  (50% <i style="color:red;"> BELOW AVG</i>) of Credit-Refund returned</h4></p>
+                        <p><h4> <strong>22%</strong>  (25% <i style="color:red;"> BELOW AVG </i>) of Denied-Refund returned</h4></p>
+                    </div>
+                    </div>
+
+                    <div class='col-sm-12 col-md-12 col-lg-12'>
+                        <!-- <br></br> -->
+                        <p class='lead text-align-center'>Segments </p>
+                    </div>
+
+{% endif %}
+{% for object in queryset %}
+
+            <div class='col-sm-4 col-md-4 col-lg-4'>
+                        <div class="span4 chart-wrapper"  id="{{ object.chart_id }}">
+                            <div class="chart-title bold"> <strong> {{ object.chart_title }} </strong></div>
+                            <a href="../v={{ object.chart_name }}" class="btn btn-default btn-sm  lato">Make Primary</a>    
+                        </div>
+            </div>
+{% empty %}
+    <li>Sorry, this question has moved or is not available. Let us know here: </li>
+
+{% endfor %}
+                    <div class='col-sm-6 col-md-6 col-lg-6'>
+                        <div class="span6 chart-wrapper"  id="{{ chartgroup }}">
+                            <div class="chart-title bold"> <strong> {{ chartgroupTitle }} Sales/Subs/X</strong></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+
+                            <div class="chart-title bold"> <strong> Customer List</strong>
+                            <div class='data-table span6'  id="giantTable-chart"></div>
+                        </div>
+
+                        </div>
+{% endblock %}
+
+{% block chartTitle %}
+    {{ searchresult.chart_title }}
+{% endblock %}
+
+{% block chartDesc %}
+        {{ searchdescription }}
+{% endblock %}
+
+
+{% block chartfile %}
+    <script src="{% static searchbase %}" type='text/javascript'></script>
+{% endblock %}

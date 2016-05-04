@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class='row'>
+<div class='col-sm-6 col-sm-offset-3'>
+<a href="{% url 'home' %}"><img src="{% static 'img/logobig.png' %}" class = "center-block" height="300"></a>
+<p class='text-center lead'>You have successfully logged out.</p><p class='text-center lead'><a href="{% url 'auth_login' %}">Log in </a></p></p>
+
+</div>
+</div>
+
+{% endblock %}

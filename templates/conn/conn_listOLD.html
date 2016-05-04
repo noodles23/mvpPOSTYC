@@ -1,0 +1,11 @@
+<h1>Books FBV User</h1>
+<ul>
+    {% for conn in object_list %}
+    <li>{{ conn.name }}  ({{ conn.pages }} Pages)
+    <a href="{% url 'conn_edit' conn.id %}">edit</a>
+    <a href="{% url 'conn_delete' conn.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'conn_new' %}">New</a>

@@ -1,0 +1,71 @@
+
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <!-- start: Header -->
+        {% include 'head.html' %}
+    </head>
+    <body>
+        <!-- start: NavBar -->
+        {% include 'navbar2.html' %}
+        <link rel="stylesheet" href="{% static 'css/pricing.css' %}">
+        <p></p>
+        <!-- start: Page Content -->
+
+	<div class="container text-center">
+		<br/>
+		<br/>
+		<br/>
+		<div class="row m-t-lg m-b"><div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3"><h3 class="m-t-0">Pick a Plan</h3></div></div>
+
+	<div class="row container-pricing">
+
+		<div class="col-sm-12 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2 column-pricing">
+			<header class="cd-pricing-header"><h2>Early Access Pricing</h2>
+				<div class="cd-price"><span class="cd-currency">$</span><span class="cd-value">39</span><span class="cd-duration">mo</span></div>
+				<div class="tier"><span>For E-Commerce Managers</span></div></header>
+				<div class="cd-pricing-body">
+					<ul class="p-l-0 cd-pricing-features" style="padding-left: 0px;">
+						<li>Guided Setup</li>
+						<li>Automatic Dashboards</li>
+						<li>Ask 100+ Question Library</li>
+						<li><em>Unlimited</em> one-click integrations</li>
+						<li>Fanatical Email & Phone Support</li>
+					</ul></div><span class="cd-pricing"><a href="{% url 'home' %}" class="btn btn-primary btn-lg">Start my Free Trial</a></span>
+			</div>
+			<div class="col-sm-12 col-md-4 col-lg-4 column-pricing">
+			<header class="cd-pricing-header"><h2>Agency Plan</h2>
+				<div class="cd-price"><span class="cd-currency">$</span><span class="cd-value">499+</span><span class="cd-duration">mo</span></div>
+				<div class="tier"><span>helps analysts save time and tell engaging data stories</span></div></header>
+				<div class="cd-pricing-body">
+					<ul class="p-l-0 cd-pricing-features" style="padding-left: 0px;">
+						<li>Up to 200 Users</li>
+						<li>Fully Managed Setup</li>
+						<li>Custom-built Dashboards</li>
+						<li>Custom-built Answers</li>
+						<li>Connect to exisitng data storage</li>
+						<li>Fanatical <em>Dedicated Support</em></li>
+					</ul></div><span class="cd-pricing"><a href="" class="btn btn-info btn-lg" disabled="disabled">Talk to an Deployment Analyst</a></span>
+			</div>
+	</div>
+</div>
+
+       
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+
+
+
+<!-- start: Footer -->
+{% include 'footer.html' %}
+    </body>
+</html>
+

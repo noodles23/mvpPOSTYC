@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <!-- start: Header -->
+       <title>29C | {% block title %}{% endblock %}</title>
+        {% include 'head.html' %}
+    </head>
+    <body>
+        <!-- start: NavBar -->
+        {% include 'navbar2.html' %}
+        {% include 'login_css.html' %}
+        <p></p>
+        <!-- start: Page Content -->
+
+        <div class="container-fluid">
+
+        <div class='col-sm-12'>  
+            <p class='lead text-align-center'><strong>{% block chartTitle %}{% endblock %}</strong></p>    
+            <h4>{% block chartDesc %}{% endblock %}</h4>
+            <br></br>
+        </div>
+
+        {% block selectedchart %}{% endblock %}
+
+
+        </div>
+
+
+
+<!-- start: Footer -->
+{% include 'footer.html' %}
+{% block chartfile %}{% endblock %}
+
+    </body>
+</html>
+

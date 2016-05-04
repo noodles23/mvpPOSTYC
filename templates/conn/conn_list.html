@@ -1,0 +1,92 @@
+
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <!-- start: Header -->
+        {% include 'head.html' %}
+    </head>
+    <body>
+        <!-- start: NavBar -->
+        {% include 'navbar2.html' %}
+        <link rel="stylesheet" href="{% static 'css/pricing.css' %}">
+        <link href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" rel="stylesheet">
+        <p></p>
+        <!-- start: Page Content -->
+
+	<div class="container text-center">
+		<br/>
+		<br/>
+		<br/>
+		<div class="row m-t-lg m-b"><div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2"><h3 class="m-t-0">Consolidate your Data</h3>
+
+		</div></div>
+	</br>
+
+		<div class="row"><div class="col-sm-8 col-md-8 col-lg-8">
+		 <table id="catalog" class="display" cellspacing="0" width="100%">
+		        <thead>
+		            <tr>
+		                <th>Connection Name</th>
+		                <th>Type</th>
+		                <th>Edit Connection</th>
+		                <th>Remove Connection</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		{% for object in object_list %}
+		            <tr >
+		                <td><span class="item_name"> {{ object.name }} </span></td>
+		                <td><span class="item_price">{{ object.connection_type }}</span></td>
+		                <td><a href="{% url 'conn_edit' object.id %}">Edit ({{ object.name }})</a></td>
+		                <td><a href="{% url 'conn_delete' object.id %}">Delete ({{ object.name }})</a></td>
+		            </tr>
+		{% endfor %}
+		            
+		        </tbody>
+		</table>
+
+		</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+
+				<a class='btn btn-info btn-lg btn-block' href="{% url 'conn_new' %}">New Data Connection</a>
+				<a class='btn btn-success btn-lg btn-block' href="{% url 'conn_new' %}">Done- What's Next?</a>
+			</div>
+		</div>
+
+
+
+
+</div>
+
+       
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+
+
+
+<!-- start: Footer -->
+{% include 'footer.html' %}
+            <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+            <script> 
+                $(document).ready(function() {
+                $('#catalog').DataTable(
+
+                	);
+                } );
+            </script>
+            <script>
+    </body>
+</html>
+
