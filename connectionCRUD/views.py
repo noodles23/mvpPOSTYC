@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.forms import ModelForm
 
 from .models import Conn
+from pmain.models import CustomerDB
 
 class connForm(ModelForm):
     class Meta:
@@ -15,8 +16,23 @@ def conn_list(request, template_name='conn/conn_list.html'):
         conn = Conn.objects.all()
     else:
         conn = Conn.objects.filter(user=request.user)
-    data = {}
-    data['object_list'] = conn
+    try:
+        t = CustomerDB.objects.filter(customer_username=request.user).latest('updated')
+        stat=t.customer_status
+        if stat == None:
+                stat = 'new'
+        data = {
+                "stat": stat,
+                "object_list": conn
+                }
+    except:
+        stat='new'
+        data = {
+                "stat": stat,
+                "object_list": conn
+                }
+    # data = {}
+    # data['object_list'] = conn
     return render(request, template_name, data)
 
 @login_required

@@ -51,8 +51,13 @@
 		</div>
 			<div class="col-sm-4 col-md-4 col-lg-4">
 
-				<a class='btn btn-info btn-lg btn-block' href="{% url 'conn_new' %}">New Data Connection</a>
-				<a class='btn btn-success btn-lg btn-block' href="{% url 'conn_new' %}">Done- What's Next?</a>
+				<a class='btn btn-success btn-xlarge btn-block' href="{% url 'conn_new' %}">New Data Connection</a>
+				{% if stat == "new" %}
+				<a class='btn btn-info btn-lg btn-block' href="{% url 'billing' %}">Save & Continue</a>
+				{% else %}
+				<a class='btn btn-info btn-lg btn-block' href="{% url 'home' %}">Home</a>
+				{% endif %}
+
 			</div>
 		</div>
 

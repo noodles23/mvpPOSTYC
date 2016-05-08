@@ -25,6 +25,9 @@ urlpatterns = [
     # url(r'^connections/$', 'pmain.views.connections', name='connections'),
     url(r'^billing/$', 'pmain.views.billing', name='billing'),
     url(r'^accounts/', include('registration.backends.default.urls')),
+
+    url(r'^tt/$', 'pmain.views.tt', name='tt'),
+
     url(r'^connections/', views.conn_list, name='conn_list'),
     url(r'^new$', views.conn_create, name='conn_new'),
     url(r'^edit/(?P<pk>\d+)$', views.conn_update, name='conn_edit'),

@@ -25,27 +25,34 @@
 
 		<div class="col-sm-12 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2 column-pricing">
 			<header class="cd-pricing-header"><h2>Early Access Pricing</h2>
-				<div class="cd-price"><span class="cd-currency">$</span><span class="cd-value">39</span><span class="cd-duration">mo</span></div>
+				<div class="cd-price"><span class="cd-currency">$</span><span class="cd-value">49</span><span class="cd-duration">mo</span></div>
 				<div class="tier"><span>For E-Commerce Managers</span></div></header>
 				<div class="cd-pricing-body">
 					<ul class="p-l-0 cd-pricing-features" style="padding-left: 0px;">
-						<li>Guided Setup</li>
+						<li>We show you what you should focus on</li>
 						<li>Automatic Dashboards</li>
-						<li>Ask 100+ Question Library</li>
+						<li>Ask the Question Library</li>
 						<li><em>Unlimited</em> one-click integrations</li>
-						<li>Fanatical Email & Phone Support</li>
-					</ul></div><span class="cd-pricing"><a href="{% url 'home' %}" class="btn btn-primary btn-lg">Start my Free Trial</a></span>
+						<li>Fanatical Email Support</li>
+					</ul></div>
+	{% if stat == "new" %}
+					<span class="cd-pricing"><a href="{% url 'tt' %}" class="btn btn-primary btn-xlarge">Start my Free 30 Day Trial</a></span>
+	{% else %}
+					<span class="cd-pricing"><a href="" class="btn btn-info btn-lg" disabled="disabled">Current Plan (contact us to change)</a></span>
+					<span class="cd-pricing"><a href="{% url 'home' %}" class="btn btn-primary btn-xlarge">Go Back Home! {{stat}}</a></span>
+	{% endif %}
+	
 			</div>
 			<div class="col-sm-12 col-md-4 col-lg-4 column-pricing">
-			<header class="cd-pricing-header"><h2>Agency Plan</h2>
+			<header class="cd-pricing-header"><h2>Medium Plan</h2>
 				<div class="cd-price"><span class="cd-currency">$</span><span class="cd-value">499+</span><span class="cd-duration">mo</span></div>
-				<div class="tier"><span>helps analysts save time and tell engaging data stories</span></div></header>
+				<div class="tier"><span>Pay for real live analysts, as you go</span></div></header>
 				<div class="cd-pricing-body">
 					<ul class="p-l-0 cd-pricing-features" style="padding-left: 0px;">
-						<li>Up to 200 Users</li>
+						<li>Up to 100 Users</li>
 						<li>Fully Managed Setup</li>
 						<li>Custom-built Dashboards</li>
-						<li>Custom-built Answers</li>
+						<li>Custom-built Answers by our experienced analysts</li>
 						<li>Connect to exisitng data storage</li>
 						<li>Fanatical <em>Dedicated Support</em></li>
 					</ul></div><span class="cd-pricing"><a href="" class="btn btn-info btn-lg" disabled="disabled">Talk to an Deployment Analyst</a></span>
