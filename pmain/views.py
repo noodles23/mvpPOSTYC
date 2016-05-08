@@ -10,6 +10,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import NewCustomer
 from .models import CustomerDB
 
+from django.core.mail import send_mail
+
 # Create your views here.
 
 # def home2(request):
@@ -52,6 +54,7 @@ def tt(request):
 		t = CustomerDB.objects.filter(customer_username=request.user).latest('updated')
 		t.customer_status = 'awaiting'  # change field
 		t.save() # this will update only
+		send_mail('New Sub Data Ready', request.user, 'kirk@29thcentury.com', ['alex@29thcentury.com', 'monkey@29thcentury.com'], fail_silently=False)
 		return HttpResponseRedirect(reverse('home'))
 
 @login_required
