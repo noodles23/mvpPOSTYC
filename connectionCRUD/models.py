@@ -6,10 +6,12 @@ from django.conf import settings
 
 CATEGORIES = (
         ('Google Analytics', 'Google Analytics'),
-        ('mazda', 'Mazda'),
-        ('nissan', 'Nissan'),
-        ('toyota', 'Toyota'),
-        ('Other', 'Other'),)
+        ('Mailchimp', 'Mailchimp'),
+        ('Shopify', 'Shopify'),
+        ('Facebook', 'Facebook'),
+        ('SugarCRM', 'SugarCRM'),
+        ('ExactTarget', 'ExactTarget'),
+        ('WooCommerce', 'WooCommerce'),)
 
 CONNTYPE = (
         ('API Key', 'API Key'),
