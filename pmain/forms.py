@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import CustomerDB
+from .models import CustomerDB, alertbox
 
 class NewCustomer(forms.ModelForm):
 	class Meta:
@@ -17,4 +17,8 @@ class NewCustomer(forms.ModelForm):
 	def clean_product_name(self):
 		product_name = self.cleaned_data.get('product_name')
 		return product_name
-	
+
+class NewAlert(forms.ModelForm):
+	class Meta:
+		model = alertbox
+		fields = ['alert_user', 'alert_type', 'alert_title',  'alert_text', 'alert_link',]

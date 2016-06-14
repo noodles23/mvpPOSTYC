@@ -20,6 +20,17 @@
 
                     </ul> -->
 
+
+                    {% if request.user.is_superuser %}
+
+                    <ul class="nav navbar-nav navbar-left">
+                                <li><a href="{% url 'alertform' %}"><i class="icon-bar-chart"></i><span class="hidden-tablet"> ADMIN- Add Alerts</span></a></li>
+
+                    </ul>
+
+
+                    {% endif %}
+
                 <div class="nav-no-collapse header-nav">
                         <ul class="nav pull-right">
 

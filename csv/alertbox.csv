@@ -1,0 +1,3 @@
+alert_user,alert_type,alert_title,alert_text,alert_link
+alex,danger,test title,asdfasdf,randolink
+alex,success,test2,body 2,r2

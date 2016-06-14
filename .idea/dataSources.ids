@@ -72,13 +72,23 @@
     <table name="connectionCRUD_conn" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR(200)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="connection_type" sqlType="VARCHAR(200)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="password_if_required" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="username_or_apikey" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR(200)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_connectionCRUD_conn_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <index name="connectionCRUD_conn_e8701ad4" unique="true" columns="user_id"/>
+    </table>
+    <table name="dataapi_cust_db_model" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="user_current" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="db_host" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="db_name" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="db_table" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="db_username" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="db_password" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
     </table>
     <table name="django_admin_log" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
@@ -116,6 +126,27 @@
       <primary-key columns="session_key"/>
       <index name="django_session_de54fa62" unique="true" columns="expire_date"/>
     </table>
+    <table name="frontend_module" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="label" sqlType="VARCHAR(50)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="installed" sqlType="BOOL" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <index name="frontend_module_d304ba20" unique="true" columns="label"/>
+    </table>
+    <table name="pmain_alertbox" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="alert_type" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="alert_title" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="alert_text" sqlType="VARCHAR(2000)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="alert_link" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="alert_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="alert_2" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="alert_3" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="alert_user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_pmain_alertbox_1" columns="alert_user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="pmain_alertbox_58c09d84" unique="true" columns="alert_user_id"/>
+    </table>
     <table name="pmain_customerdb" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="customer_name" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
@@ -129,6 +160,31 @@
       <column name="updated" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="customer_username" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="customer_status" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="pmain_custtouchpoint" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="cust_email2" sqlType="VARCHAR(2000)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="touchpoint_type" sqlType="VARCHAR(300)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="touchpoint_datasource" sqlType="VARCHAR(200)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="touchpoint_background" sqlType="VARCHAR(200)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="touchpoint_date" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="touchpoint_month" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="touchpoint_name" sqlType="VARCHAR(200)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="touchpoint_owner" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="touchpoint_category" sqlType="VARCHAR(200)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="touchpoint_amount" sqlType="VARCHAR(200)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="touchpoint_count" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="pmain_subchart" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="chart_name" sqlType="VARCHAR(120)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="chart_title" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="chart_id" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="chart_exp" sqlType="VARCHAR(2000)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="chart_base" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="chart_parent_id" sqlType="VARCHAR(600)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <primary-key columns="id"/>
     </table>
     <table name="registration_registrationprofile" schema="" catalog="" type="TABLE">

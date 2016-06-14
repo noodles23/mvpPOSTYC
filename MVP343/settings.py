@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'csvimport.app.CSVImportConf',
     'pmain',
     'connectionCRUD',
     'registration',
     'crispy_forms',
+    'apiconnect',
+    'dataapi',
 
 ]
 

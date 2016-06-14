@@ -24,8 +24,20 @@
 
         </div>
 
-        <div class='col-sm-12 col-md-612 col-lg-6  col-lg-offset-3'> 
+        <div class='col-sm-12 col-md-12 col-lg-6  col-lg-offset-3'> 
         <p class='lead text-align-center'>Since you last visited ...</p>  
+
+
+        {% for object in alist %}
+        <div class="alert alert-{{object.alert_type}}" role="alert">
+          <a href="{{object.alert_link}}" class="alert-link"><p><h3>{{object.alert_title}}</h3></p> {{object.alert_text}}</a>
+        </div>
+{% empty %}
+    <li>Sorry, Nothing is available right now. Please email here at monkey@29thcentury.com </li>
+
+{% endfor %}
+
+
         <div class="alert alert-danger" role="alert">
           <a href="#" class="alert-link"><p><h3>Daily Email Conversion Rate Down 18% </h3></p> Click here to investigate</a>
         </div>
